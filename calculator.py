@@ -10,5 +10,5 @@ def subtract(x, y):
     result = x - y
     return result
 
-def multiply(x,y):
+def multiply(x, y):
     return None
