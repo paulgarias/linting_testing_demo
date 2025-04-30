@@ -1,0 +1,7 @@
+
+[flake8]
+# Ignore specific errors (e.g., whitespace before :,  line too long, line break before binary operator)
+ignore = E203, E501, W503  
+# Often set to match Black's default
+max-line-length = 88       
+exclude = .git,__pycache__,venv,build,dist # Directories to ignore
