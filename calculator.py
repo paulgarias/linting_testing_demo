@@ -4,7 +4,6 @@ def add(x, y):
 
 # Subtract function has a very long line...
 
-
 def subtract(x, y):
     # This text will be a very long line this text will be a very long line this text
     # will be a very long line
