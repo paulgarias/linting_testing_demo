@@ -9,3 +9,6 @@ def subtract(x, y):
     # will be a very long line
     result = x - y
     return result
+
+def multiply(x,y):
+    return None
