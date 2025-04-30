@@ -1,5 +1,6 @@
 from calculator import add  # Import the function to test
 from calculator import subtract
+from calculator import multiply
 
 # Test function names MUST start with 'test_'
 
@@ -26,3 +27,8 @@ def test_subtract_negative_numbers():
     assert subtract(-1, 1) == -2
     assert subtract(1, -1) == 2
     assert subtract(5, -50) == 55
+
+def test_multiply_numbers():
+    assert multiply(1, 6) == 6
+    assert multiply(3, 10) == 30
+    assert multiply(-5, 5) == -25

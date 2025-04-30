@@ -13,4 +13,4 @@ def subtract(x, y):
 
 
 def multiply(x, y):
-    return None
+    return x * y
