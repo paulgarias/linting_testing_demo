@@ -1,5 +1,5 @@
 # Name shown in GitHub UI
-name: Python CI
+name: Python CI (Parallel)
 
 # Events that trigger this workflow
 on:
@@ -11,10 +11,11 @@ on:
 
 # Jobs to run
 jobs:
-  lint-test: # Job ID
+  lint: # Job ID for Linting
+    name: Run Linter # Display name for the job
     runs-on: ubuntu-latest # Runner environment
 
-    steps: # Sequence of tasks
+    steps: # Sequence of tasks for the lint job
       # 1. Get the code
       - name: Check out code
         uses: actions/checkout@v4
@@ -24,19 +25,44 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-          # cache: 'pip' # Cache dependencies
 
-      # 3. Install dependencies
-      - name: Install dependencies
+      # 3. Install Linter dependency
+      - name: Install Flake8
         run: |
           pip install --upgrade pip
-          pip install flake8 pytest
-          # Or: pip install -r requirements.txt
+          pip install flake8
 
       # 4. Run Linter
       - name: Lint with Flake8
         run: flake8 . --count --statistics
 
-      # 5. Run Tests
+  
+
+
+
+
+test: # Job ID for Testing
+    name: Run Tests # Display name for the job
+    runs-on: ubuntu-latest # Runner environment
+
+    steps: # Sequence of tasks for the test job
+      # 1. Get the code
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      # 2. Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      # 3. Install Testing dependency
+      - name: Install Pytest
+        run: |
+          pip install --upgrade pip
+          pip install pytest
+
+      # 4. Run Tests
       - name: Test with Pytest
         run: pytest
+
