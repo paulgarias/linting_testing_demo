@@ -35,13 +35,7 @@ jobs:
       # 4. Run Linter
       - name: Lint with Flake8
         run: flake8 . --count --statistics
-
-  
-
-
-
-
-test: # Job ID for Testing
+  test: # Job ID for Testing
     name: Run Tests # Display name for the job
     runs-on: ubuntu-latest # Runner environment
 
